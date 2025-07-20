@@ -1,0 +1,744 @@
+* {
+  scroll-behavior: smooth;
+}
+
+main header {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  border-bottom: solid black 1px;
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: rgba(225, 233, 255, 0.8);
+  transition: z-index 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+main header .logo a img {
+  position: absolute;
+  left: calc(50% - 3rem);
+  top: 0;
+  height: 4rem;
+  z-index: 1000;
+}
+main header .navigation {
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  z-index: 900;
+  justify-content: space-around;
+  align-items: center;
+}
+main header .navigation ul {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+}
+main header .navigation ul li {
+  padding: 0rem 2rem;
+}
+main header .icon {
+  width: 30%;
+  display: flex;
+  position: relative;
+  right: 3rem;
+  justify-content: space-around;
+  align-items: center;
+}
+main header .icon ul {
+  display: flex;
+  margin: 1.5rem;
+  z-index: 1000;
+  justify-content: flex-end;
+  align-items: center;
+}
+main header .icon ul li {
+  padding: 0rem 1rem;
+}
+main header .icon ul li svg {
+  width: 28px;
+  height: 28px;
+}
+main header .icon ul li span {
+  border: 1.5px solid black;
+  border-radius: 15px;
+  padding: 0.3rem 0.8rem;
+}
+main header .icon span p {
+  border: 1.5px solid black;
+  border-radius: 15px;
+  padding: 0.3rem 0.8rem;
+}
+main header.show {
+  z-index: 1000;
+  opacity: 1;
+}
+main section {
+  position: relative;
+}
+main section .head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 110vh;
+}
+main section .head #video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -100;
+}
+main section .head h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -4rem;
+  z-index: 1;
+}
+main section .head h1 img {
+  width: 200px;
+  filter: invert(100%) brightness(2);
+}
+main section .head h2 {
+  position: absolute;
+  bottom: calc(20% + 4rem);
+  font: 1rem;
+  color: #ffffff;
+  font-family: "Homemade Apple", cursive;
+}
+main section .head .scroll {
+  position: absolute;
+  bottom: calc(10% + 4rem);
+  width: 3px;
+  height: 80px;
+  background: #ffffff;
+  animation: scrollDown 2s ease infinite;
+  margin: 0 auto;
+}
+@keyframes scrollDown {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+main section .description {
+  position: relative;
+  height: 110vh;
+  text-align: center;
+  align-self: center;
+  background-color: #ffffff;
+  font-size: 0.8rem;
+}
+main section .description p {
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 2rem;
+  padding: 20rem;
+}
+main section .description p span {
+  font-size: 1.5rem;
+  color: rgb(59, 147, 247);
+}
+main section .description p img {
+  width: 100px;
+}
+main section .description .scroll_up {
+  transition: 3s;
+  transform: translateY(30px);
+  opacity: 0;
+}
+main section .description .scroll_up.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+main section .pic {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 480px);
+  overflow-y: hidden;
+  padding: 6px;
+  background-color: #ffffff;
+  width: 100%;
+}
+main section .pic div {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+main section .pic .script {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  animation: scroller linear;
+  animation-timeline: scroll(root);
+  flex-direction: column-reverse;
+  translate: 0% calc(-100% + 100vh);
+}
+main section .pic .script img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1333333333);
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 480px;
+}
+@keyframes scroller {
+  to {
+    translate: 0% calc(100% - 100vh);
+  }
+}
+main section .pic .scr img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1333333333);
+  border-radius: 5px;
+  width: 480px;
+}
+main section .pic .scr .scroll_up {
+  transition: 3s;
+  transform: translateY(30px);
+  opacity: 0;
+  border: solid 2px #000000;
+  border-radius: 15px;
+  overflow: hidden;
+}
+main section .pic .scr .scroll_up p {
+  width: 200px;
+  padding: 1rem 3rem;
+  margin-left: 8rem;
+  font-size: 1rem;
+  font-family: "Kaisei Decol", serif;
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+}
+main section .pic .scr .scroll_up p::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #72adec;
+  border-radius: 13px;
+  transition: all 0.3s ease;
+}
+main section .pic .scr .scroll_up p:hover {
+  color: #fff;
+}
+main section .pic .scr .scroll_up p:hover::after {
+  left: 0;
+  width: 100%;
+}
+main section .pic .scr .scroll_up p:active {
+  top: 2px;
+}
+main section .pic .scr .scroll_up.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+main section .New {
+  position: relative;
+  width: 100vw;
+  height: 700vh;
+}
+main section .New .text {
+  position: relative;
+  top: 0;
+  height: 700vh;
+  width: 100%;
+  background-image: url(../image3/7.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 10rem;
+  overflow: hidden;
+  display: flex;
+}
+main section .New .text span {
+  font-family: "Kurale", serif;
+  font-size: 18rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 10rem;
+  letter-spacing: 1rem;
+}
+main section .New .text::before {
+  content: "";
+  background-size: cover;
+  background-image: inherit;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  filter: blur(1px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -99;
+}
+main section .New .container {
+  width: 100vw;
+  position: absolute;
+  top: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Kurale", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  z-index: 1;
+}
+main section .New .container .card {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(225, 233, 255, 0.5);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+main section .New .container .card h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 15px;
+  background-color: rgb(127, 187, 227);
+}
+main section .New .container .card h2 {
+  font-size: 14px;
+  padding: 2rem;
+  font-family: "Kurale", serif;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
+main section .New .container .card .button {
+  width: 120px;
+  position: absolute;
+  left: calc(50% - 30px);
+  bottom: 3rem;
+  border: solid 2px #000000;
+  border-radius: 15px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+main section .New .container .card .button p {
+  font-size: 13px;
+  font-style: "Kurale", serif;
+}
+main section .New .container .card .button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #72adec;
+  border-radius: 13px;
+  transition: all 0.6s ease;
+}
+main section .New .container .card .button:hover {
+  color: #fff;
+}
+main section .New .container .card .button:hover::after {
+  left: 0;
+  width: 100%;
+}
+main section .New .Schedule {
+  position: absolute;
+  top: 130vh;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../image3/7.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  display: flex;
+}
+main section .New .Schedule span {
+  margin: 200px 3rem 3rem;
+  font-family: "Kurale", serif;
+  font-size: 18rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+main section .New .Sch {
+  position: absolute;
+  top: 170vh;
+  width: 1200px;
+  height: 1000px;
+  margin: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(225, 233, 255, 0.5);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+main section .New .Sch h1 {
+  align-items: center;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  padding: 4rem;
+}
+main section .New .Sch h1 ul {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+main section .New .Sch h1 ul li {
+  padding: 1rem;
+}
+main section .New .Sch h1 ul li svg {
+  width: 40px;
+}
+main section .New .Sch .concent {
+  border-bottom: solid #000000 1px;
+  margin: 0rem 3rem;
+}
+main section .New .Sch .concent h2 {
+  width: 220px;
+  font-size: 14px;
+  margin: 2rem;
+  padding: 0rem 3rem;
+  font-family: "Kurale", serif;
+  font-weight: 400;
+  line-height: 1.6rem;
+  border-radius: 15px;
+  background: rgb(169, 215, 255);
+}
+main section .New .Sch .concent p {
+  padding: 2rem 1rem;
+  font-family: "Kurale", serif;
+  font-size: 14px;
+}
+main section .New .Sch .button {
+  width: 200px;
+  position: absolute;
+  left: calc(50% - 100px);
+  bottom: 3rem;
+  border: solid 2px #000000;
+  border-radius: 15px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+main section .New .Sch .button p {
+  font-size: 13px;
+  font-style: "Kurale", serif;
+}
+main section .New .Sch .button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #72adec;
+  border-radius: 13px;
+  transition: all 0.6s ease;
+}
+main section .New .Sch .button:hover {
+  color: #fff;
+}
+main section .New .Sch .button:hover::after {
+  left: 0;
+  width: 100%;
+}
+main section .New .Discograhy {
+  position: absolute;
+  top: 320vh;
+  width: 100%;
+  background-image: url(../image3/7.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+main section .New .Discograhy span {
+  margin: 200px 3rem 3rem;
+  font-family: "Kurale", serif;
+  font-size: 15rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+main section .New .Dis {
+  position: absolute;
+  top: 350vh;
+  height: 880px;
+  width: 1000px;
+  margin-top: 5rem;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(225, 233, 255, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+main section .New .Dis .box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 3rem;
+}
+main section .New .Dis .box .img-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+main section .New .Dis .box .img-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #222, transparent);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+}
+main section .New .Dis .box .img-box img {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 200px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .New .Dis .box:hover {
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 2;
+}
+main section .New .Dis .box:hover .img-box::before {
+  opacity: 1;
+}
+main section .New .Dis .box:hover .text-box p {
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+main section .New .Dis .text-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  padding: 20px;
+  display: block;
+  align-items: flex-end;
+  z-index: 2;
+}
+main section .New .Dis .text-box p {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Kurale", serif;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  transform: translateY(200px);
+  transition: 0.5s;
+}
+main section .New .Dis .button {
+  width: 200px;
+  position: relative;
+  bottom: 0;
+  margin: 3rem;
+  border: solid 2px #000000;
+  border-radius: 15px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+main section .New .Dis .button p {
+  font-size: 13px;
+  font-style: "Kurale", serif;
+}
+main section .New .Dis .button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #72adec;
+  border-radius: 13px;
+  transition: all 0.6s ease;
+}
+main section .New .Dis .button:hover {
+  color: #fff;
+}
+main section .New .Dis .button:hover::after {
+  left: 0;
+  width: 100%;
+}
+main section .New .Dis .button:active {
+  top: 2px;
+}
+main section .New .vid {
+  position: absolute;
+  top: 500vh;
+  display: flex;
+  padding: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(225, 233, 255, 0.5);
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+main section .New .vid iframe {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 500px;
+}
+main section .New .vid2 {
+  position: absolute;
+  top: 600vh;
+  display: flex;
+  padding: 10px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(225, 233, 255, 0.5);
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+main section .New .vid2 iframe {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 500px;
+}
+main section .New .scroll_up {
+  width: 100vw;
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 3s;
+  transform: translateY(30px);
+  opacity: 0;
+}
+main section .New .scroll_up.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+main section footer {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  justify-content: center;
+  background-color: #ffffff;
+}
+main section footer p {
+  font-family: "Kurale", serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+  margin-top: 200px;
+}
+main section footer ul {
+  top: 0;
+  width: 1000px;
+  height: 3rem;
+  margin-left: 300px;
+  font-family: "Kurale", serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+main section footer ul li {
+  margin: 3rem;
+}
+main section footer ul li a {
+  text-decoration: none;
+  padding: 0 0 5px;
+  display: block;
+  position: relative;
+}
+main section footer ul li a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: solid 1px rgb(1, 1, 1);
+  width: 0;
+  transition: all 0.3s ease;
+}
+main section footer ul li a:hover:after {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
