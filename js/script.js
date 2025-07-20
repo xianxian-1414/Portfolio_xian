@@ -1,6 +1,6 @@
 const body = document.body;
 
-// Create star elements dynamically
+// 星を動的に作成する関数
 const starCreate = () => {
   for (let i = 0; i < 20; i++) {
     const star = document.createElement('div');
@@ -14,15 +14,15 @@ const starCreate = () => {
 
     document.querySelector('.Layers_02').appendChild(star);
 
-    // Remove star after 10 seconds
+    // 10秒後に星を削除する
     setTimeout(() => star.remove(), 10000);
   }
 };
 
-// Spawn stars every 5 seconds
+// 5秒ごとに星を生成する
 setInterval(starCreate, 5000);
 
-// Set up canvas
+// キャンバスのセットアップ
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 let w = window.innerWidth;
@@ -30,7 +30,7 @@ let h = window.innerHeight;
 canvas.width = w;
 canvas.height = h;
 
-// Generate snow particles
+// 雪の粒を生成
 const num = 100;
 const snows = Array.from({ length: num }, () => ({
   x: Math.random() * w,
@@ -38,7 +38,7 @@ const snows = Array.from({ length: num }, () => ({
   r: Math.random() * 5 + 1
 }));
 
-// Move snow particles
+// 雪の粒を動かす関数
 const move = () => {
   snows.forEach(snow => {
     snow.x -= Math.random() * 2 + 1;
@@ -49,7 +49,7 @@ const move = () => {
   });
 };
 
-// Draw snow on canvas
+// キャンバスに雪を描画する関数
 const draw = () => {
   context.clearRect(0, 0, w, h);
   context.beginPath();
@@ -70,7 +70,7 @@ const draw = () => {
 draw();
 setInterval(draw, 30);
 
-// Hide loading screen when DOM is ready
+// DOMの読み込みが完了したらローディング画面を隠す
 document.addEventListener("DOMContentLoaded", () => {
   gsap.to(".loading__wrapper", {
     duration: 0.8,
