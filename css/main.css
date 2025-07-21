@@ -434,7 +434,7 @@ body .contact .copyright {
 body .contact::before {
   content: "";
   background-size: cover;
-  background-image: url(../images/9.jpg);
+  background-image: url(../assets/images/illust/9.jpg);
   background-position: -10 -10%;
   background-attachment: fixed;
   filter: blur(5px);
